@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+
+.icon {
+    @apply flex bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 text-white font-semibold;
+}
+
+@theme {
+    --font-game: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+    --font-body: "Nunito Variable", system-ui, sans-serif;
+
+    --color-cartoon-pink: #FF6B8B;
+    --color-cartoon-blue: #4FACFE;
+    --color-cartoon-yellow: #FFD200;
+    --color-cartoon-purple: #A18CD1;
+    --color-cartoon-dark: #2D2D2D;
+    --color-cartoon-green: #2ECC71;
+    --color-cartoon-red: #FF3838;
+
+    --shadow-hard : 6px 6px 10px rgba(0,0,0,1);
+    --shadow-simple: 4px 4px 0px rgba(0,0,0,1);
+
+    --shadow-sample-hover : 0 6px 0 #1d4ed8, 0 12px 28px rgba(99,102,241,0.5);
+    --shadow-sample : 0 4px 0 #1d4ed8, 0 8px 24px rgba(99,102,241,0.4);
+    --shadow-3d-button: 0 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    --shadow-3d-button-hov: 0 5px 0 rgba(0, 0, 0, 0.4), 0 0 12px rgba(59, 130, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+html {
+    font-family: var(--font-body);
+    color: antiquewhite;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* evite le zoom au double tap (le pinch-zoom reste possible) et le "rebond" de page */
+html, body {
+    touch-action: manipulation;
+    overscroll-behavior: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* Titres et boutons: police "bonbon" (une seule graisse, on interdit le faux gras) */
+h1, h2, h3, .font-game, .title-ingame, .fun-title, .guess-button {
+    font-family: var(--font-game);
+    font-weight: 400;
+    font-synthesis-weight: none;
+    letter-spacing: 0.015em;
+}
+
+/* Apparition des tuiles de niveau: l'ecran se "remplit" au lieu de surgir d'un bloc */
+@keyframes tile-in {
+    from { opacity: 0; transform: translateY(10px) scale(0.7); }
+    60%  { opacity: 1; transform: translateY(-2px) scale(1.05); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-tile-in { animation: tile-in 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.2) both; }
+
+/* Bonbon: rebond d'un badge quand sa valeur change */
+@keyframes bump {
+    0% { transform: scale(1); } 35% { transform: scale(1.22); } 100% { transform: scale(1); }
+}
+.animate-bump { animation: bump 0.5s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible { outline: 3px solid #ffd23f; outline-offset: 3px; }
+
+/* Bonbon: reflet en haut + "levre" epaisse en bas */
+.candy-gloss::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 46%;
+    background: linear-gradient(to bottom, rgba(255,255,255,.34), rgba(255,255,255,0));
+    border-radius: inherit; pointer-events: none;
+}
+.candy-lip { box-shadow: inset 0 -8px 0 rgba(0,0,0,.2), 0 10px 0 rgba(0,0,0,.28), 0 18px 28px rgba(0,0,0,.35); }
+
+@keyframes float-slow { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
+.animate-float-slow { animation: float-slow 3.2s ease-in-out infinite; }
+
+@keyframes coin-rise { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-46px) scale(1.25); } }
+.animate-coin-rise { animation: coin-rise .9s ease-out forwards; }

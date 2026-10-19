@@ -1,0 +1,24 @@
+{
+ "mobile": {
+  "scores": {
+   "performance": 97,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP": "2.3 s",
+  "CLS": "0.004",
+  "TBT": "90 ms"
+ },
+ "desktop": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP": "0.6 s",
+  "CLS": "0.001",
+  "TBT": "0 ms"
+ }
+}

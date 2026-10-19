@@ -1,0 +1,59 @@
+[
+    {
+        "name": "Nombre Pair",
+        "description": "Dit si le nombre est pair ou impair",
+        "price": 300,
+        "id": 1,
+        "category": "consumable",
+        "currency": "coin"
+    },
+    {
+        "name": "Scan",
+        "description": "Réduit la plage de 50%",
+        "price": 100,
+        "id": 2,
+        "currency": "coin"
+    },
+    {
+        "name": "Vie bonus",
+        "description": "+3 essais (avant ou pendant la partie)",
+        "price": 80,
+        "id": 3,
+        "currency": "coin"
+    },
+    {
+        "name": "Conseiller IA",
+        "description": "Suggère le meilleur prochain nombre",
+        "price": 120,
+        "id": 4,
+        "currency": "coin"
+    },
+    {
+        "name": "Premier",
+        "description": "Dit si le nombre est Premier ou non",
+        "price": 120,
+        "id": 5,
+        "currency": "coin"
+    },
+    {
+        "name": "Parfait",
+        "description": "Dit si le nombre est Parfait ou non",
+        "price": 120,
+        "id": 6,
+        "currency": "coin"
+    },
+    {
+        "id": 7,
+        "name": "Ralenti",
+        "price": 150,
+        "currency": "coin",
+        "description": "Double le temps restant (au moins +5 s)"
+    },
+    {
+        "id": 8,
+        "name": "Multiplicateur x2",
+        "price": 200,
+        "currency": "coin",
+        "description": "Double les pièces gagnées si tu gagnes (avant le 1er essai)"
+    }
+]
